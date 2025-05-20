@@ -1,16 +1,13 @@
 # Paramètres.
 .vscode/
 
-# Répertoires.
-app/
-config/
-public/
-
 # Fichiers à retravailler.
 private/data/*.csv
 private/data/data_*.sql
 
-# Fichiers
-.env
-.htaccess
-composer.json
+# Fichiers à retravailler (bis).
+app/**/_*
+config/**/_*
+core/**/_*
+private/**/_*
+public/**/_*
