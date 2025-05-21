@@ -1,6 +1,6 @@
 <h2>Liste des chambres</h2>
 
-<table border="1" cellpadding="8" cellspacing="0">
+<table class="tableaux">
     <thead>
         <tr>
             <th>ID</th>

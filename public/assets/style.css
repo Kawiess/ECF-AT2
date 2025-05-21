@@ -1,0 +1,161 @@
+/* Pour faire en sorte que le footer reste en bas */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex: 1 0 auto;
+}
+
+/* Barre de navigation */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    font-family: sans-serif;
+}
+nav div a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+}
+.nav-logo a {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.nav-auth a {
+    color: darkred;
+}
+nav img {
+    height: 40px;
+}
+
+/* Tableaux */
+.tableaux {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #000;
+    margin-top: 1rem;
+}
+.tableaux th,
+.tableaux td {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    text-align: left;
+}
+.tableaux th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+.tableaux tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Pied de page */ 
+footer {
+    flex-shrink: 0;
+    background-color: #f5f5f5;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    border-top: 1px solid #ddd;
+    margin-top: 3rem;
+}
+footer p {
+    margin: 0.3rem 0;
+}
+footer a {
+    color: #666;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Contenu principal */
+.main-content {
+    padding: 3rem 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 900px;
+    margin: auto;
+}
+.welcome-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.welcome-section h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+.logo-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.logo-image {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.icon-home {
+    color: #27ae60;
+    margin-right: 0.5rem;
+}
+.welcome-text {
+    font-size: 1.2rem;
+    color: #555;
+}
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.btn {
+    flex: 1;
+    text-decoration: none;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn i {
+    margin-right: 0.5rem;
+}
+.btn-green {
+    background-color: #27ae60;
+    box-shadow: 0 3px 6px rgba(39, 174, 96, 0.4);
+}
+.btn-green:hover {
+    background-color: #219150;
+}
+.btn-blue {
+    background-color: #2980b9;
+    box-shadow: 0 3px 6px rgba(41, 128, 185, 0.4);
+}
+.btn-blue:hover {
+    background-color: #246aa2;
+}

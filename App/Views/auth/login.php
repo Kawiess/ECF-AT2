@@ -15,7 +15,7 @@
         <?php if (!empty($error)) : ?>
             <p class="error"><?= htmlspecialchars($error) ?></p>
         <?php endif; ?>
-        <form action="/login" method="post">
+        <form action="<?= BASE_URL ?>auth/loginPost" method="post">
             <label for="email">Adresse e-mail :</label>
             <input type="email" name="email" id="email" required>
             <label for="password">Mot de passe :</label>

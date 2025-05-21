@@ -1,21 +1,33 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Bienvenue au Gîte Pim</title>
-    <link rel="icon" href="<?= BASE_URL ?>assets/logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-    <h1>
-        <i class="fas fa-home"></i>
-        Bienvenue sur le panneau d’administration du Gîte Pim
-    </h1>
-    <p>Ceci est une première vue fonctionnelle.</p>
-    <p>
-        <a href="<?= BASE_URL ?>chambre" style="font-weight: bold; font-size: 1.2em;">
-            <i class="fas fa-bed"></i> Voir les chambres
+<!-- Entête + barre de navigation -->
+<?php 
+    $pageTitle = "Bienvenue au Gîte Pim";
+    include __DIR__ . '/partials/header.php';
+    include __DIR__ . '/partials/navbar.php';
+?>
+
+<!-- Contenu -->
+<main class="main-content">
+    <section class="welcome-section">
+        <div class="logo-container">
+            <img src="<?= BASE_URL ?>assets/logo.png" alt="Logo Gîte Pim" class="logo-image" />
+        </div>
+        <h1>
+            <i class="fas fa-home icon-home"></i>
+            Bienvenue au Gîte Pim
+        </h1>
+        <p class="welcome-text">
+            Votre panneau d’administration centralisé et sécurisé pour gérer chambres, activités et réservations.
+        </p>
+    </section>
+    <section class="actions">
+        <a href="<?= BASE_URL ?>chambre" class="btn btn-green">
+            <i class="fas fa-bed"></i> Gérer les chambres
         </a>
-    </p>
-</body>
-</html>
+        <a href="<?= BASE_URL ?>activite" class="btn btn-blue">
+            <i class="fas fa-person-hiking"></i> Gérer les activités
+        </a>
+    </section>
+</main>
+
+<!-- pied de page -->
+<?php include __DIR__ . '/partials/footer.php'; ?>

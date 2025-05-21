@@ -3,18 +3,18 @@
 namespace App\Controllers;
 
 use Core\Controller;
-use App\Models\User;
+use App\Models\Utilisateur;
 
 // Contrôleur d'authentification de l'utilisateur.
 class AuthController extends Controller
 {
-    protected UtilisateurModel $userModel;
+    protected Utilisateur $userModel;
 
     // Constructeur.
     public function __construct()
     {
         session_start();
-        $this->userModel = new UtilisateurModel();
+        $this->userModel = new Utilisateur();
     }
 
     // Page de connexion.
@@ -27,8 +27,14 @@ class AuthController extends Controller
         $this->render('auth/login');
     }
 
+    // ...
+    public function login()
+    {
+        require_once __DIR__ . '/../Views/auth/login.php';
+    }
+
     // Connexion (tentative).
-    public function login(): void
+    public function login2(): void
     {
         // Vérification accès.
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
