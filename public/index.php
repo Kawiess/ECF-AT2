@@ -19,7 +19,6 @@ spl_autoload_register(function ($class) {
 });
 
 // Routage.
-require_once "../app/core/Router.php";
-use app\core\Router;
+use App\Core\Router;
 $router = new Router();
 $router->dispatch($_SERVER['REQUEST_URI']);
