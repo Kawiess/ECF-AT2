@@ -9,6 +9,7 @@ use PDOException;
 // Classe pour gérer l'accès aux BDD.
 class Database
 {
+    // PHP Data Objects.
     protected static $db;
 
     // Constructeur.

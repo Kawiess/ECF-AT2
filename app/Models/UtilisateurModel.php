@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Core\Database;
 
-// Modèle pour intéragir avec les utilisateurs de la BDD.
+// Modèle pour interagir avec les utilisateurs de la BDD.
 class UtilisateurModel
 {
     protected \PDO $db;
@@ -15,7 +15,7 @@ class UtilisateurModel
         $this->db = Database::db();
     }
 
-    // Rechreche utilisateur.
+    // Recherche utilisateur.
     public function findByEmail(string $email): ?array
     {
         $sql = 'SELECT * FROM utilisateurs WHERE email = :email LIMIT 1';

@@ -7,7 +7,7 @@ define('DB_USER', 'root');
 define('DB_PASS', 'sgbd');
 
 // Autres paramètres.
-define('BASE_URL', '/pim-admin/public/');
+define('BASE_URL', '/ecf-at2/public/');
 define('SESSION_NAME', 'pim_admin_session');
 define('DEBUG_MODE', true);
 date_default_timezone_set('Pacific/Noumea');

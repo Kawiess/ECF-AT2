@@ -7,7 +7,21 @@ require_once '../config/config.php';
 session_name(SESSION_NAME);
 session_start();
 
+// Chargement des classes PHP.
+spl_autoload_register(function ($class) {
+    $classPath = str_replace('\\', DIRECTORY_SEPARATOR, $class);
+    $file = __DIR__ . '/../' . $classPath . '.php';
+    if (file_exists($file)) {
+        require_once $file;
+    } else {
+        die("Classe introuvable : $class → chemin attendu : $file");
+    }
+});
+
 // Routage.
 use Core\Router;
 $router = new Router();
 $router->dispatch($_SERVER['REQUEST_URI']);
+
+// Débug.
+echo "Server is running on port " . $_SERVER['SERVER_PORT'];
