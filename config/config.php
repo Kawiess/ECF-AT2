@@ -2,17 +2,30 @@
 
 use Dotenv\Dotenv;
 
+print_r($_ENV);   
+
 // Environnement de travail.
 define('APP_ENV', getenv('APP_ENV') ?: 'development');
 
 // Si "dév", on charge le fichier ".env" local.
 if (APP_ENV === 'development') {
+    echo "<pre>Dev</pre>";
     if (file_exists(__DIR__ . '/../.env')) {
         require_once __DIR__ . '/../vendor/autoload.php';
         $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
         $dotenv->load();
     }
+} else {
+    echo "<pre>Prod</pre>";
 }
+
+print_r($_ENV);
+echo "<br>";
+print_r($_ENV['DB_HOST']);
+echo "<br>";
+print_r($_ENV['APP_ENV']);
+echo "<br>";
+print_r("Host : " .  getenv('DB_HOST'));
 
 // Variables de BDD.
 define('DB_HOST', getenv('DB_HOST') ?: 'localhost');

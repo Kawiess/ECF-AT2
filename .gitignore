@@ -7,7 +7,3 @@ vendor/
 
 # Fichiers à retravailler (bis).
 app/**/_*
-config/**/_*
-core/**/_*
-private/**/_*
-public/**/_*
