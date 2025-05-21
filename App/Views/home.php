@@ -11,7 +11,11 @@
         <i class="fas fa-home"></i>
         Bienvenue sur le panneau d’administration du Gîte Pim
     </h1>
-
     <p>Ceci est une première vue fonctionnelle.</p>
+    <p>
+        <a href="<?= BASE_URL ?>chambre" style="font-weight: bold; font-size: 1.2em;">
+            <i class="fas fa-bed"></i> Voir les chambres
+        </a>
+    </p>
 </body>
 </html>

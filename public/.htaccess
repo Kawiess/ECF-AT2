@@ -8,3 +8,13 @@ RewriteRule ^ index.php [QSA,L]
 RewriteCond %{REQUEST_URI} [A-Z]
 RewriteRule ^(.*)$ ${lc:$1} [R=301,L]
 
+# Interdire l'accès au .env
+<FilesMatch "^\.env">
+    Require all denied
+</FilesMatch>
+
+# Empêcher l'affichage des erreurs PHP
+php_flag display_errors Off
+
+# Sécuriser le dossier public
+Options -Indexes
