@@ -7,6 +7,9 @@ class Router
 {
     public function dispatch($uri)
     {
+        // Info.
+        echo "Routage de l'URI : $uri";
+
         // Nettoyage de l’URI.
         $uri = parse_url($uri, PHP_URL_PATH);
         $uri = trim($uri, '/');
