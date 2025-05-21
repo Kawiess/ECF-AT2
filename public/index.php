@@ -2,6 +2,7 @@
 
 // Configuration.
 require_once '../config/config.php';
+require_once __DIR__ . '../Core/Router.php';
 
 // Démarrage de la session.
 session_name(SESSION_NAME);
@@ -22,6 +23,3 @@ spl_autoload_register(function ($class) {
 use Core\Router;
 $router = new Router();
 $router->dispatch($_SERVER['REQUEST_URI']);
-
-// Débug.
-echo "Server is running on port " . $_SERVER['SERVER_PORT'];
