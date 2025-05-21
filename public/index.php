@@ -2,7 +2,7 @@
 
 // Configuration.
 require_once '../config/config.php';
-require_once __DIR__ . '/../Core/Router.php';
+require_once __DIR__ . '/../../Core/Router.php';
 
 // Démarrage de la session.
 session_name(SESSION_NAME);
