@@ -24,14 +24,6 @@ class Router
         $controllerClass = 'App\\Controllers\\' . $controllerName;
         $controllerFile  = __DIR__ . '/../Controllers/' . $controllerName . '.php';
 
-        // Débogage.
-        echo "<pre>";
-        echo "URI nettoyée : $uri\n";
-        echo "Contrôleur : $controllerClass\n";
-        echo "Fichier : $controllerFile\n";
-        echo "Méthode : $methodName\n";
-        echo "</pre>";
-
         // Renvoie si existe.
         if (file_exists($controllerFile)) {
             require_once $controllerFile;

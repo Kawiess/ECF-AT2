@@ -5,10 +5,6 @@
 # Bibliothèques externes.
 vendor/
 
-# Fichiers à retravailler.
-private/data/*.csv
-private/data/data_*.sql
-
 # Fichiers à retravailler (bis).
 app/**/_*
 config/**/_*
