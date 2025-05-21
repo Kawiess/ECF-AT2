@@ -2,7 +2,6 @@
 
 // Configuration.
 require_once '../config/config.php';
-require_once __DIR__ . '/../../Core/Router.php';
 
 // Démarrage de la session.
 session_name(SESSION_NAME);
@@ -20,6 +19,6 @@ spl_autoload_register(function ($class) {
 });
 
 // Routage.
-use Core\Router;
+use App\Core\Router;
 $router = new Router();
 $router->dispatch($_SERVER['REQUEST_URI']);

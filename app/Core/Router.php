@@ -1,6 +1,6 @@
 <?php
 
-namespace Core;
+namespace App\Core;
 
 // Classe pour le routage.
 class Router
@@ -22,7 +22,7 @@ class Router
         $methodName     = $segments[1] ?? 'index';
         $params         = array_slice($segments, 2);
         $controllerClass = 'App\\Controllers\\' . $controllerName;
-        $controllerFile  = __DIR__ . '/../app/controllers/' . $controllerName . '.php';
+        $controllerFile  = __DIR__ . '/../controllers/' . $controllerName . '.php';
 
         // Renvoie si existe.
         if (file_exists($controllerFile)) {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Core;
+namespace App\Core;
 
 // Bibliothèque d'accès aux BDD.
 use PDO;
