@@ -14,12 +14,6 @@ if (APP_ENV === 'development') {
     }
 }
 
-// HTTPS obligatoire en production.
-if (APP_ENV === 'production' && empty($_SERVER['HTTPS'])) {
-    header('Location: https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-    exit;
-}
-
 // Variables de BDD.
 define('DB_HOST', $_ENV['DB_HOST'] ?: 'localhost');
 define('DB_NAME', $_ENV['DB_NAME'] ?: 'pim_db');
