@@ -1,0 +1,8 @@
+{
+    "name": "gite/pim",
+    "description": "Gîte Pim – Panneau d'administration",
+    "require": {},
+    "scripts": {
+        "start": "php -S 0.0.0.0:$PORT -t public"
+    }
+}
