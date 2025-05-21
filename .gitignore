@@ -1,5 +1,9 @@
 # Paramètres.
 .vscode/
+.env
+
+# Bibliothèques externes.
+vendor/
 
 # Fichiers à retravailler.
 private/data/*.csv
