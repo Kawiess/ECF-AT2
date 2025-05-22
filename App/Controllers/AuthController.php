@@ -2,91 +2,70 @@
 
 namespace App\Controllers;
 
-use Core\Controller;
 use App\Models\Utilisateur;
 
 // Contrôleur d'authentification de l'utilisateur.
-class AuthController extends Controller
+class AuthController
 {
-    protected Utilisateur $userModel;
-
-    // Constructeur.
-    public function __construct()
-    {
-        session_start();
-        $this->userModel = new Utilisateur();
-    }
-
     // Page de connexion.
-    public function loginForm(): void
-    {
-        if ($this->isLogged()) {
-            header('Location: /dashboard');
-            exit;
-        }
-        $this->render('auth/login');
-    }
-
-    // ...
     public function login()
     {
+        session_start();
         require_once __DIR__ . '/../Views/auth/login.php';
     }
 
-    // Connexion (tentative).
-    public function login2(): void
+    // Traite la connexion utilisateur.
+    public function connexion()
     {
-        // Vérification accès.
-        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            header('Location: /login');
-            exit;
+        session_start();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $email = trim($_POST['email'] ?? '');
+            $password = trim($_POST['password'] ?? '');
+            if (empty($email) || empty($password)) {
+                $_SESSION['error'] = "Tous les champs sont obligatoires.";
+                header('Location: ' . BASE_URL . 'auth/connexion');
+                exit;
+            }
+            $model = new Utilisateur();
+            $user = $model->findByEmail($email, $password);
+            if ($user && password_verify($password, $user['password'])) {
+                $_SESSION['user'] = [
+                    'id' => $user['id'],
+                    'email' => $user['email'],
+                    'nom' => $user['nom'] ?? '',
+                ];
+                header('Location: ' . BASE_URL);
+                exit;
+            } else {
+                $_SESSION['error'] = "Identifiants incorrects.";
+                header('Location: ' . BASE_URL . 'auth/connexion');
+                exit;
+            }
+        } else {
+            include __DIR__ . '/../Views/auth/login.php';
         }
-
-        // Lecture champs.
-        $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-        $password = $_POST['password'] ?? '';
-        if (!$email || !$password) {
-            $this->render('auth/login', ['error' => 'Email et mot de passe obligatoires']);
-            return;
-        }
-
-        // Vérification base.
-        $user = $this->userModel->findByEmail($email);
-        if (!$user || !password_verify($password, $user['password'])) {
-            $this->render('auth/login', ['error' => 'Identifiants invalides']);
-            return;
-        }
-
-        // Authentification réussie
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['user_role'] = $user['role'];
-        session_regenerate_id(true);
-
-        // Redirection.
-        header('Location: /dashboard');
-        exit;
     }
 
     // Déconnexion.
-    public function logout(): void
+    public function logout()
     {
         session_start();
-        $_SESSION = [];
         session_destroy();
-        setcookie(session_name(), '', time() - 3600);
-        header('Location: /login');
+        header('Location: ' . BASE_URL . 'auth/login');
         exit;
     }
 
-    // Utilisateur connecté ?
-    public function isLogged(): bool
+    // Page d'inscription.
+    public function register()
     {
-        return isset($_SESSION['user_id']);
+        session_start();
+        require_once __DIR__ . '/../Views/auth/register.php';
     }
 
-    // Rôle utilisateur ?
-    public function isAdmin(): bool
+    // Inscription désactivée !
+    public function inscription_old()
     {
-        return $this->isLogged() && ($_SESSION['user_role'] === 'admin');
+        session_start();
+        include __DIR__ . '/../Views/auth/register.php';
     }
 }

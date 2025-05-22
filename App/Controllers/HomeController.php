@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-// Classe pour test.
+// Page d'accueil.
 class HomeController
 {
     public function index()
