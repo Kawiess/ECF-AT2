@@ -19,24 +19,20 @@
     - [X] **Utilisateur** (pour la connexion au panneau d'administration)
 - [ ] Insertion des données :
     - [X] **Chambre**   (chambre + séjour)
-    - [ ] **Bagne**     (élément + activité)
-    - [ ] **Cheval**    (élément + activité + réservation)
-    - [ ] **Garderie**  (élément + activité)
+    - [X] **Bagne**     (élément + activité)
+    - [X] **Cheval**    (élément + activité + réservation)
+    - [X] **Garderie**  (élément + activité)
     - [X] **Kayak**     (élément + activité + réservation)
     - [X] **Repas**     (élément + activité + réservation)
 - [ ] Autres :
     - [X] Statistique - occupation chambre - par chambre
     - [X] Statistique - occupation chambre - par jour
-    - [ ] Statistique - activité - ???
-    - [ ] Déclencheurs (trigger) ?
-    - [ ] Vues ?
-    - [ ] Procédures stockées ?
-    - [ ] Fonctions ?
+    - [ ] Statistique - autres ???
 
 ### Fonctionnalités
 
 - [ ] Réservations :
-    - [ ] **Consultation**
+    - [X] **Consultation**
     - [ ] **Modification**
     - [ ] **Annulation**
 - [ ] Gestion dynamique des disponibilités et ressources :
@@ -50,19 +46,19 @@
     - [ ] Taux occupation par tranche horaire (activité)
     - [ ] Autres ?
 - [ ] Interface :
-    - [ ] Responsive ?
-    - [ ] Intuitive ?
-- [ ] Déploiement :
-    - [ ] Site d'hébergement
-    - [ ] Documentation liée
-- [ ] Authentification
-- [ ] Documentation du code
+    - [X] Responsive ?
+    - [X] Intuitive ?
+- [X] Déploiement :
+    - [X] Site d'hébergement
+    - [X] Documentation liée
+- [X] Authentification
+- [X] Documentation du code
 - [ ] partie "Front"
 
 ### Livrables
 
-- [ ] Site et panneau d’administration
-    - [ ] Lien du site
+- [X] Site et panneau d’administration
+    - [X] Lien du site
     - [X] Lien du dépôt Git
 - [ ] Dossier projet (PDF)
     - [ ] Liste des compétences mobilisées (C1, C5, C6, C7, C8)
@@ -102,13 +98,13 @@
     - [ ] Inclure dans les composants d’accès l’authentification et la gestion de la sécurité du SGDB
 - [ ] C7 : Développer des composants métier côté serveur.
     - [ ] Coder dans un langage orienté objet avec un style défensif
-    - [ ] Développer en utilisant une architecture logicielle multicouche répartie sécurisée
+    - [X] Développer en utilisant une architecture logicielle multicouche répartie sécurisée
     - [ ] Gérer la sécurité de l’application (authentification, permissions, validation des entrées...) dans la partie serveur
-    - [ ] Utiliser des composants d’accès aux données
+    - [X] Utiliser des composants d’accès aux données
     - [ ] Utiliser un service distant (Representational State Transfer Application Program Interface (API Rest)
     - [X] Améliorer à fonctionnalités constantes un code existant (refactoring)
     - [ ] Mettre en place un système de veille technologique permettant de suivre les principales évolutions technologiques et les problématiques de sécurité en lien avec les composants métier d’une application
-    - [ ] Documenter le code
+    - [X] Documenter le code
 - [ ] C8 : Documenter le déploiement d’une application dynamique web.
-    - [ ] Prendre en compte les dépendances du composant à déployer vis-à-vis des composants externes
-    - [ ] Rédiger la procédure de déploiement
+    - [X] Prendre en compte les dépendances du composant à déployer vis-à-vis des composants externes
+    - [X] Rédiger la procédure de déploiement
