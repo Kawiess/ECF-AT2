@@ -5,10 +5,10 @@ html, body {
     padding: 0;
 }
 body {
-    background-color: lightblue;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #e6f4ea;
 }
 main {
     flex: 1 0 auto;
@@ -45,23 +45,49 @@ nav img {
 
 /* Tableaux */
 .tableaux {
-    width: 100%;
+    margin: 2rem auto;
     border-collapse: collapse;
-    border: 1px solid #000;
-    margin-top: 1rem;
+    width: auto;
+    max-width: 90%;
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    background-color: #fdfdfd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .tableaux th,
 .tableaux td {
-    border: 1px solid #ccc;
-    padding: 8px 12px;
+    border: 1px solid #ddd;
+    padding: 12px 16px;
     text-align: left;
+    min-width: 120px;
+    white-space: nowrap;
 }
-.tableaux th {
-    background-color: #f2f2f2;
-    font-weight: bold;
+.tableaux thead {
+    background-color: #f5f5f5;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 .tableaux tbody tr:nth-child(even) {
-    background-color: #fafafa;
+    background-color: #f9f9f9;
+}
+.tableaux tbody tr:nth-child(odd) {
+    background-color: #f0f8ff;
+}
+.tableaux tbody tr:hover {
+    background-color: #eef;
+}
+
+/* Filtre tableau */
+.filtre-container {
+    margin: 1rem auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+.filtre-container select {
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
 }
 
 /* Pied de page */ 
@@ -91,7 +117,6 @@ footer a:hover {
 .main-content {
     padding: 3rem 2rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    max-width: 900px;
     margin: auto;
 }
 .welcome-section {

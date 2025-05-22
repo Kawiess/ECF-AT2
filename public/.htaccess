@@ -5,5 +5,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [QSA,L]
 
 # Redirige vers une URL en minuscules si nécessaire
-RewriteCond %{REQUEST_URI} [A-Z]
-RewriteRule ^(.*)$ ${lc:$1} [R=301,L]
+# RewriteCond %{REQUEST_URI} [A-Z]
+# RewriteRule ^(.*)$ ${lc:$1} [R=301,L]
