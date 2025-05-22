@@ -72,7 +72,7 @@ INSERT INTO activite (id_sejour, type_activite, code_activite, date, heure_debut
 (NULL, 'RA', 'RA24120033', '2024-12-23', '14:00:00', '16:00:00', 1, 'Chambre=JA09;Cheval=Charly;Guide=Lucas;ChevalGuide=Papirus'),
 (NULL, 'RA', 'RA24120034', '2024-12-23', '14:00:00', '16:00:00', 1, 'Chambre=JA09;Cheval=Sao;Guide=Lucas;ChevalGuide=Papirus');
 
--- Mise à jour de l'id de sejour.
+-- Mise à jour de l'id de séjour.
 UPDATE activite a
 JOIN sejour s ON s.id_chambre = (
     SELECT c.id FROM chambre c WHERE c.code = SUBSTRING_INDEX(SUBSTRING_INDEX(a.informations, 'Chambre=', -1), ';', 1)
@@ -91,5 +91,5 @@ INSERT INTO reservation (id_activite, id_element)
 SELECT activite.id AS id_activite, element.id AS id_element
 FROM activite
 JOIN element
-ON activite.informations LIKE CONCAT('%TypeKayak=', element.code_element, '%')
-WHERE element.type_activite = 'KA';
+ON activite.informations LIKE CONCAT('%Cheval=', element.code_element, ';%')
+WHERE element.type_activite = 'RA';

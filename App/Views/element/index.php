@@ -1,13 +1,13 @@
 <!-- Entête + barre de navigation -->
 <?php 
-    $pageTitle = "Liste des chambres";
+    $pageTitle = "Liste des éléments";
     include __DIR__ . '/../partials/header.php';
     include __DIR__ . '/../partials/navbar.php';
 ?>
 
 <!-- Contenu principal -->
 <main class="main-content">
-    <h2><i class="fas fa-person-hiking"></i> Liste des activités</h2>
+    <h2><i class="fas fa-bed"></i> Liste des éléments</h2>
 
     <!-- Filtrage -->
     <div class="filtre-container">
@@ -27,28 +27,26 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>ID Séjour</th>
+                <th>Code élément</th>
                 <th>Type activité</th>
-                <th>Code d'activité</th>
-                <th>Date</th>
-                <th>Heure de début</th>
-                <th>Heure de fin</th>
-                <th>Nombre</th>
-                <th>Informations</th>
+                <th>Capacité</th>
+                <th>Image</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($listeActivites as $activite): ?>
+            <?php foreach ($listeElements as $element): ?>
                 <tr>
-                    <td><?= htmlspecialchars($activite['id']) ?></td>
-                    <td><?= htmlspecialchars($activite['id_sejour']) ?></td>
-                    <td><?= htmlspecialchars($activite['type_activite']) ?></td>
-                    <td><?= htmlspecialchars($activite['code_activite']) ?></td>
-                    <td><?= $activite['date'] ?></td>
-                    <td><?= $activite['heure_debut'] ?></td>
-                    <td><?= $activite['heure_fin'] ?></td>
-                    <td><?= $activite['nb_personnes'] ?> personnes</td>
-                    <td><?= htmlspecialchars($activite['informations']) ?></td>
+                    <td><?= htmlspecialchars($element['id']) ?></td>
+                    <td><?= htmlspecialchars($element['code_element']) ?></td>
+                    <td><?= htmlspecialchars($element['type_activite']) ?></td>
+                    <td><?= $element['capacite'] ?> personnes</td>
+                    <td class="table-image-cell">
+                        <?php if (!empty($element['chemin_image'])): ?>
+                            <img src="<?= htmlspecialchars(BASE_URL . 'assets/element/' . $element['chemin_image']) ?>" alt="Image de <?= htmlspecialchars($element['code_element']) ?>">
+                        <?php else: ?>
+                            <img src="<?= BASE_URL ?>assets/default-image.png" alt="Image par défaut">
+                        <?php endif; ?>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

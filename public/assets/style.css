@@ -77,6 +77,14 @@ nav img {
 .tableaux tbody tr:hover {
     background-color: #eef;
 }
+.table-image-cell img {
+    max-height: 40px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
 
 /* Filtre tableau */
 .filtre-container {
@@ -183,4 +191,11 @@ footer a:hover {
 }
 .btn-blue:hover {
     background-color: #246aa2;
+}
+.btn-purple {
+    background-color: #8e44ad;
+    box-shadow: 0 3px 6px rgba(142, 68, 173, 0.4);
+}
+.btn-purple:hover {
+    background-color: #753a91;
 }

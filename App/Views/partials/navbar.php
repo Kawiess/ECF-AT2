@@ -15,6 +15,9 @@
         <a href="<?= BASE_URL ?>activite">
             <i class="fas fa-person-hiking"></i> Activités
         </a>
+        <a href="<?= BASE_URL ?>element">
+            <i class="fas fa-puzzle-piece"></i> Éléments
+        </a>
     </div>
 
     <!-- Connexion utilisateur -->

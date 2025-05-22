@@ -26,6 +26,9 @@
         <a href="<?= BASE_URL ?>activite" class="btn btn-blue">
             <i class="fas fa-person-hiking"></i> Gérer les activités
         </a>
+        <a href="<?= BASE_URL ?>element" class="btn btn-purple">
+            <i class="fas fa-puzzle-piece"></i> Gérer les éléments
+        </a>
     </section>
 </main>
 
